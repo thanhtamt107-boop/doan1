@@ -26,7 +26,9 @@ try:
     model = tf.keras.models.load_model(MODEL_PATH)
     print(" Model loaded successfully.")
 
-    num_model_classes = model.layers[-1].output_shape[-1]
+    # num_model_classes = model.layers[-1].output_shape[-1]
+    num_model_classes = model.output_shape[-1]
+
     if num_model_classes != len(class_names):
         raise ValueError(f"Số lớp không khớp! Model có {num_model_classes}, class_names có {len(class_names)}")
 
