@@ -15,7 +15,8 @@ UPLOAD_FOLDER = os.path.join(BASE_DIR, "static", "uploads")
 class_names = ["ageDegeneration", "cataract", "diabetes", "glaucoma", "hypertension", "myopia", "normal", "diabetic retinopathy", "retinitis pigmentosa", "disc edema", "pterygium", "retinal detachment"]
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+print("Num GPUs Available:", len(tf.config.list_physical_devices('GPU')))
 # ========== Load model ==========
 model = None
 try:
@@ -83,4 +84,5 @@ def predict():
 
 
 if __name__ == '__main__':
+
     app.run(debug=True)
