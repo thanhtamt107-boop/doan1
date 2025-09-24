@@ -3,6 +3,7 @@ gunicorn==23.0.0
 numpy==2.3.2
 Pillow==11.3.0
 h5py==3.14.0
-tensorflow-cpu==2.13.0
+tensorflow-cpu==2.20.0
+
 
 
